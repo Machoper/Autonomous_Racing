@@ -1,0 +1,10 @@
+<launch>
+	<node pkg="urg_node" name="lidar" type="urg_node"/>
+	<node pkg="rosserial_python" name="serial" type="serial_node.py">
+		<param name="port" value="/dev/ttyACM1"/>
+	</node>
+	<node pkg="race" name="talker" type="talker_new.py"/>
+	<node pkg="race" name="dist_finder" type="dist_finder.py"/>
+	<node pkg="race" name="kill" type="kill.py"/>
+	<node pkg="race" name="control" type="control.py"/>
+</launch>
